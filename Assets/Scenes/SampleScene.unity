@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 20
-  minDistance: 5
+  minDistance: 0.2
 --- !u!114 &1855759538
 MonoBehaviour:
   m_ObjectHideFlags: 0
