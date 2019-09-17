@@ -21,7 +21,6 @@ public class StayInside : MonoBehaviour
 
         objectWidth = transform.GetComponent<SpriteRenderer>().bounds.size.x / 2;
         objectHeight = transform.GetComponent<SpriteRenderer>().bounds.size.y / 2;
-
     }
 
     // Update is called once per frame
@@ -32,11 +31,6 @@ public class StayInside : MonoBehaviour
         viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + objectWidth, screenBounds.x - objectWidth);
         viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
 
-        Debug.Log(viewPos.x);
-        Debug.Log(viewPos.y);
-        Debug.Log(objectHeight);
-        Debug.Log(objectWidth);
-        Debug.Log(screenBounds);
         transform.position = viewPos;
     }
 }
