@@ -9,6 +9,9 @@ public class FollowTouch : MonoBehaviour
     public float minDistance = 0.09f;
 
     private Rigidbody2D rb;
+    private float prevRotation;
+    private bool isStopped;
+
 
     Touch touch;
     Vector3 touchPosition, target;
@@ -25,9 +28,9 @@ public class FollowTouch : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.touchCount > 0)
+        if (InputHelper.GetTouches().Count > 0)
         {
-            touch = Input.GetTouch(0);
+            touch = InputHelper.GetTouches()[0];
             
             if (
                 touch.phase == TouchPhase.Began 
@@ -46,9 +49,16 @@ public class FollowTouch : MonoBehaviour
             currentDistanceToTouchPos = (touchPosition - rb.transform.position).magnitude;
             Vector3 dir = (touchPosition - rb.transform.position).normalized;
             rb.MovePosition(rb.transform.position + dir * moveSpeed * Time.fixedDeltaTime);
+            prevRotation = rb.rotation;
+            isStopped = false;
         } else
         {
             rb.velocity = Vector2.zero;
+            if (isStopped)
+            {
+               rb.rotation = prevRotation;
+            }
+            isStopped = true;
         }
     }
 }

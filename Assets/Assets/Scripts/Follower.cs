@@ -7,6 +7,7 @@ public class Follower : MonoBehaviour
 
     public float speed;
     public string element;
+    public float distance;
 
     private Transform target;
     // Start is called before the first frame update
