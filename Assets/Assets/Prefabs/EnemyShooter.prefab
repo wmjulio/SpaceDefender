@@ -11,11 +11,13 @@ GameObject:
   - component: {fileID: 7950937471199274480}
   - component: {fileID: 7950937471199274495}
   - component: {fileID: 7950937471199274494}
-  - component: {fileID: 7950937471199274493}
   - component: {fileID: 7950937471199274492}
+  - component: {fileID: 2138148475}
+  - component: {fileID: 4020575909770770321}
+  - component: {fileID: 2138148470}
   m_Layer: 0
   m_Name: EnemyShooter
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,26 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7950937471199274493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7950937471199274491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06727d3ca451e9f42b2cbe20e8e1ba06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionEvent: 0
-  collisionType: 0
-  tags: 
-  actions:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: GameBooster.GameObjectUnityEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!60 &7950937471199274492
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -163,3 +145,64 @@ PolygonCollider2D:
       - {x: 0.4766345, y: -0.28713048}
       - {x: 0.46772385, y: -0.21509719}
       - {x: 0.10544777, y: 0.20163417}
+--- !u!114 &2138148475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950937471199274491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683e0cbda3232fa4dabd84496d3df918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  element: Player
+  distance: 0
+--- !u!114 &4020575909770770321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950937471199274491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06727d3ca451e9f42b2cbe20e8e1ba06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionEvent: 0
+  collisionType: 0
+  tags: Player
+  actions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2138148470}
+        m_MethodName: DestroyThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameBooster.GameObjectUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &2138148470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950937471199274491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7979796f6172f1948a0da8448a491647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfDestructionTime: 0
+  timeToDestroy: 0
+  explosionPrefab: {fileID: 0}

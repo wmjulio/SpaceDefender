@@ -161,9 +161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUps:
   - {fileID: 1171463691075887754, guid: d5ef35294024f0840a92a7a97203f236, type: 3}
-  - {fileID: 379950717710512635, guid: 2666a95cb8ad2344f83598337ff7b296, type: 3}
-  - {fileID: 7950937471199274491, guid: 32a2944267efe1f47a8e53e48e86be37, type: 3}
-  - {fileID: 1824092766848361719, guid: e1d5e003f7aa52945ada6d89cae9c52b, type: 3}
   respawnTime: 1
 --- !u!20 &519420031
 Camera:
@@ -222,6 +219,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &737840199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1171463691075887754, guid: d5ef35294024f0840a92a7a97203f236,
+    type: 3}
+  m_PrefabInstance: {fileID: 1171463691861328334}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1855759529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -232,11 +235,6 @@ PrefabInstance:
     - target: {fileID: 5729208304213649075, guid: c2e53560bdd7ab14bb2a97788f1963bb,
         type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5729208304213649075, guid: c2e53560bdd7ab14bb2a97788f1963bb,
-        type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5729208304213649087, guid: c2e53560bdd7ab14bb2a97788f1963bb,
@@ -294,29 +292,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 479815492, guid: c2e53560bdd7ab14bb2a97788f1963bb, type: 3}
+      propertyPath: agressor
+      value: 
+      objectReference: {fileID: 737840199}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2e53560bdd7ab14bb2a97788f1963bb, type: 3}
---- !u!1 &2138148469 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7950937471199274491, guid: 32a2944267efe1f47a8e53e48e86be37,
-    type: 3}
-  m_PrefabInstance: {fileID: 7950937471980636360}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2138148475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138148469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 683e0cbda3232fa4dabd84496d3df918, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  element: Player
-  distance: 0
 --- !u!1001 &1171463691861328334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -397,11 +378,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyShooter
-      objectReference: {fileID: 0}
-    - target: {fileID: 7950937471199274491, guid: 32a2944267efe1f47a8e53e48e86be37,
-        type: 3}
-      propertyPath: m_TagString
-      value: Target
       objectReference: {fileID: 0}
     - target: {fileID: 7950937471199274480, guid: 32a2944267efe1f47a8e53e48e86be37,
         type: 3}
