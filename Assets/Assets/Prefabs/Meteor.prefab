@@ -205,6 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3675ecccfea934d902f86e76980175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 10
-  min: 10
-  max: 30
+  thrust: 2
+  min: 2
+  max: 50

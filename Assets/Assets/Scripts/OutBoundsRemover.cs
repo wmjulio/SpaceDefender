@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OutBoundsRemover : MonoBehaviour
 {
+    public float limit = 1.2f;
     private Vector2 screenBounds;
     private float objectWidth;
     private float objectHeight;
@@ -29,10 +30,10 @@ public class OutBoundsRemover : MonoBehaviour
         Vector3 viewPos = transform.position;
 
         if (
-            viewPos.x < screenBounds.x * -1 - objectWidth
-            || viewPos.x > screenBounds.x + objectWidth
-            || viewPos.y < screenBounds.y * -1 - objectHeight
-            || viewPos.y > screenBounds.y + objectHeight
+            viewPos.x < (screenBounds.x * -1 - objectWidth) * limit
+            || viewPos.x > (screenBounds.x + objectWidth) * limit
+            || viewPos.y < (screenBounds.y * -1 - objectHeight) * limit
+            || viewPos.y > (screenBounds.y + objectHeight) * limit
             )
         {
             Destroy(this.gameObject);

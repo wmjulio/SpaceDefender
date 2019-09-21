@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   element: Player
-  distance: 0
+  minDistance: 4
 --- !u!114 &4020575909770770321
 MonoBehaviour:
   m_ObjectHideFlags: 0
