@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2940873889251768894}
   - component: {fileID: 4136664373550224236}
   - component: {fileID: -8879618662063551170}
+  - component: {fileID: -6570537579282470734}
   m_Layer: 0
   m_Name: Target
   m_TagString: Target
@@ -241,3 +242,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   element: Player
+  distance: 0
+--- !u!114 &-6570537579282470734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824092766848361719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06727d3ca451e9f42b2cbe20e8e1ba06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionEvent: 0
+  collisionType: 0
+  tags: Player
+  actions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 567803997154998345}
+        m_MethodName: DestroyThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameBooster.GameObjectUnityEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null

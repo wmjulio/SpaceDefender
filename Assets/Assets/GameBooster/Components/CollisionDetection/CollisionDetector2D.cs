@@ -23,7 +23,7 @@ namespace GameBooster {
 
 		public GameObjectUnityEvent actions;
 
-		bool CheckTags(GameObject go){
+        protected bool CheckTags(GameObject go){
 			if (string.IsNullOrEmpty (tags.Trim()))
 				return true;
 
