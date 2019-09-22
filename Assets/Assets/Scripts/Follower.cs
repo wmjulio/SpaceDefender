@@ -25,25 +25,44 @@ public class Follower : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (target != null)
         {
             //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
             currentDistance = (target.position - rb.transform.position).magnitude;
-
-            if (currentDistance > minDistance)
+            if (Mathf.Abs(currentDistance - minDistance) >= 0.1f)
             {
-                Vector3 dir = (target.position - rb.transform.position).normalized;
-                rb.MovePosition(rb.transform.position + dir * speed * Time.fixedDeltaTime);
+                if (currentDistance > minDistance)
+                {
+                    Vector3 dir = (target.position - rb.transform.position).normalized;
+                    rb.MovePosition(rb.transform.position + dir * speed * Time.fixedDeltaTime);
 
 
-                Vector2 direction = new Vector2(
-                    target.position.x - rb.transform.position.x,
-                    target.position.y - rb.transform.position.y
-                );
+                    Vector2 direction = new Vector2(
+                        target.position.x - rb.transform.position.x,
+                        target.position.y - rb.transform.position.y
+                    );
 
-                transform.up = direction;
+                    transform.up = direction;
+
+                }
+                else
+                {
+                    Vector3 dir = (rb.transform.position - target.position).normalized;
+                    rb.MovePosition(rb.transform.position + dir * speed * Time.fixedDeltaTime);
+
+
+                    Vector2 direction = new Vector2(
+                        target.position.x - rb.transform.position.x,
+                        target.position.y - rb.transform.position.y
+                    );
+
+                    transform.up = direction;
+                }
+            } else
+            {
+                rb.Sleep();
             }
         }
     }
