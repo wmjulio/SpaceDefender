@@ -419,8 +419,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 7950937471199274491, guid: 32a2944267efe1f47a8e53e48e86be37, type: 3}
   - {fileID: 1171463691075887754, guid: d5ef35294024f0840a92a7a97203f236, type: 3}
+  - {fileID: 0}
   useRotation: 1
   insideHierarchy: 0
   parent: {fileID: 0}
@@ -444,7 +444,7 @@ MonoBehaviour:
     - {fileID: 5118838167712771200}
   autoCreate: 1
   startTime: 0
-  repeatTime: 2
+  repeatTime: 1
 --- !u!1 &5118838167712771201
 GameObject:
   m_ObjectHideFlags: 0
