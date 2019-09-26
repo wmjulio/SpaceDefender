@@ -6,18 +6,15 @@ using UnityEngine;
 public class CollisionKnockBack : CollisionDetector2D
 {
     public Component shutdownComponent;
-    public GameObject agressor;
+    private GameObject agressor;
     public float respawnTime = 5f;
     public float forceMultiplier = 10f;
 
     private string myTag;
 
-    private Component follower;
-
     // Start is called before the first frame update
     void Start()
     {
-        follower = GetComponent<FollowTouch>();
     }
 
     void OnCollisionEnter2D(Collision2D col)

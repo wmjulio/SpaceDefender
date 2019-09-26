@@ -27,7 +27,10 @@ public class FollowTouch : MonoBehaviour
 
     private void OnEnable()
     {
-        rb.velocity = Vector2.zero;
+        if (rb != null)
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
 
