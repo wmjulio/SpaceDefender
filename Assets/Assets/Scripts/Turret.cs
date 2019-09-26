@@ -11,8 +11,10 @@ public class Turret : MonoBehaviour
     public float turretSpeed = 5f;
     public GameObjectUnityEvent actions;
     public float rateOfActions = 1f;
+    public bool isFixed = false;
 
     private Transform target;
+    private GameObject goTarget;
     private GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -22,30 +24,50 @@ public class Turret : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        faceTarget();
+    }
+
+    public void faceTarget()
+    {
+        if (isFixed)
+        {
+            return;
+        }
+
+        Vector2 direction = new Vector2(0, 0);
+
         if (target != null)
         {
-            Vector2 direction = new Vector2(
+            direction = new Vector2(
                 target.position.x - transform.position.x,
                 target.position.y - transform.position.y
             );
-
-            transform.up = direction;
         }
-    }
 
-    public void faceTarget(GameObject gObject)
-    {
-        Debug.Log(gObject.name);
+        transform.up = Vector2.Lerp(transform.up, direction, Time.deltaTime * turretSpeed);
     }
 
     void UpdateTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(targetTag);
+        var goList = new List<GameObject>();
+
+        var tagsArray = targetTag.Trim().Split(';');
+        foreach (var tag in tagsArray)
+        {
+            goList.AddRange(GameObject.FindGameObjectsWithTag(tag));
+        }
+
+        if (goTarget != null && goList.Contains(goTarget))
+        {
+            return;
+        }
+
+        GameObject[] enemies = goList.ToArray();
         float shortestDistance = Mathf.Infinity;
         GameObject nearestTarget = null;
-
+        
         foreach (GameObject enemy in enemies)
         {
             float distanceToTarget = Vector2.Distance(transform.position, enemy.transform.position);
@@ -60,11 +82,13 @@ public class Turret : MonoBehaviour
         if (nearestTarget != null && shortestDistance <= range)
         {
             target = nearestTarget.transform;
+            goTarget = nearestTarget;
         } else
         {
             target = null;
+            goTarget = null;
         }
-    }
+    } 
 
     void MyActions()
     {

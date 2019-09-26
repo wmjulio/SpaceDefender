@@ -8,23 +8,36 @@ public class ScaleLerper : MonoBehaviour
     public Vector3 maxScale;
     public float speed = 2f;
     public float duration = 5f;
+    public string elementTag;
+    public float maxAmmountElements;
 
     private Coroutine routine;
     private Vector3 stepScale;
+    private int prevLength;
     // Start is called before the first frame update
-    IEnumerator Start()
-    {
-       // minScale = transform.localScale;
 
-        while (false)
+    private void Start()
+    {
+        prevLength = GameObject.FindGameObjectsWithTag(elementTag).Length;
+        InvokeRepeating("LerpUpdate", 0f, 1f);
+    }
+
+
+    private void LerpUpdate()
+    {
+        GameObject[] gos = GameObject.FindGameObjectsWithTag(elementTag);
+        
+        if (gos.Length <= maxAmmountElements)
         {
-            yield return RepeatLerp(minScale, maxScale, duration);
-            yield return RepeatLerp(maxScale, minScale, duration);
+            int dif = gos.Length - prevLength;
+            prevLength = gos.Length;
+            IncreaseScale(dif * 10);
         }
     }
 
     public void IncreaseScale(float percentualIncrease)
     {
+        print(percentualIncrease);
         percentualIncrease = percentualIncrease / 100;
         stepScale = transform.localScale + (transform.localScale * percentualIncrease);
         if (isAGreaterThanB(maxScale, stepScale))

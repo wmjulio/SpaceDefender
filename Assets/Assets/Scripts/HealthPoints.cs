@@ -7,6 +7,7 @@ using GameBooster;
 public class HealthPoints : MonoBehaviour
 {
     public float hp = 1f;
+    public float maxHp = 1f;
     public GameObjectUnityEvent actionsWhenDie;
 
     private void Start()
@@ -25,7 +26,10 @@ public class HealthPoints : MonoBehaviour
 
     public void addHP(float restore)
     {
-        this.hp += restore;
+        if (hp < maxHp)
+        {
+            this.hp += restore;
+        }
     }
 
     private void die()
