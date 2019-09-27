@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 379950717710512632}
   - component: {fileID: 4689195423866161718}
   - component: {fileID: -6144528695841138645}
-  - component: {fileID: 5560573091522231220}
-  - component: {fileID: 7415720361069344039}
+  - component: {fileID: 5797919626801851777}
+  - component: {fileID: 924278463}
+  - component: {fileID: 6887230059492568694}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -164,7 +165,20 @@ MonoBehaviour:
   selfDestructionTime: 2
   timeToDestroy: 0
   explosionPrefab: {fileID: 0}
---- !u!114 &5560573091522231220
+--- !u!114 &5797919626801851777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379950717710512635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92185d996fec714da24df10fcf0f490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  limit: 1.2
+--- !u!114 &924278463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,9 +196,8 @@ MonoBehaviour:
   actions:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1344876266459493595, guid: 8706a69ba7dac1749bbd35926bb0cc9d,
-          type: 3}
-        m_MethodName: AddScore
+      - m_Target: {fileID: 6887230059492568694}
+        m_MethodName: addScore
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -207,16 +220,15 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameBooster.GameObjectUnityEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &7415720361069344039
+--- !u!114 &6887230059492568694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379950717710512635}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d62abc1a4baa00942a8295aa2277cb36, type: 3}
+  m_Script: {fileID: 11500000, guid: 842469bc2a121674fa2c800ce9d39c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10

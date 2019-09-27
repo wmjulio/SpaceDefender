@@ -2,31 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Score : MonoBehaviour
+public class ScoreKeeper : MonoBehaviour
 {
-
-    private int score;
+    public int value;
     public float scoreMultiplier = 1;
     private bool isMultiplierActive;
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
+        value = 0;
     }
 
-    public void AddScore(int value)
+    public void AddScore(int x)
     {
         if (isMultiplierActive)
         {
-            value = Mathf.RoundToInt(value * scoreMultiplier);
+            x = Mathf.RoundToInt(x * scoreMultiplier);
         }
-
-        score += value;
+        value += x;
+        // print(string.Concat("Adicionando: ", x.ToString(), "Novo valor: ", value.ToString()));
+        print("Adicionando: " + x.ToString() + "Novo valor: " + value.ToString());
     }
 
     public int GetScore()
     {
-        return score;
+        return value;
     }
 
 

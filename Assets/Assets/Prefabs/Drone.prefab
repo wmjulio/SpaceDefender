@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionEvent: 0
   collisionType: 0
-  tags: Bullet
+  tags: Bullet;Shield;Strike
   actions:
     m_PersistentCalls:
       m_Calls:

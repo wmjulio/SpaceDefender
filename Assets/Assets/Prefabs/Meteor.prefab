@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionEvent: 0
   collisionType: 0
-  tags: Target;Player
+  tags: Target;Player;Shield;Strike
   actions:
     m_PersistentCalls:
       m_Calls:
@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 2
+  maxHp: 1
   actionsWhenDie:
     m_PersistentCalls:
       m_Calls:

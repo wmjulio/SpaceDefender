@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 3518089993546626683}
   - component: {fileID: 8914639764443671622}
   - component: {fileID: 7703753063518411152}
+  - component: {fileID: 7784192894488166677}
   m_Layer: 0
   m_Name: gun08
   m_TagString: Untagged
@@ -276,10 +277,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 7784192894488166677}
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LaseSound
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: GameBooster.GameObjectUnityEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   rateOfActions: 3
   isFixed: 1
+--- !u!114 &7784192894488166677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5832519867488339508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d7fcfbecc70364591ddb7bbae4df85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6475041739064110571
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,7 +400,6 @@ GameObject:
   - component: {fileID: 2138148475}
   - component: {fileID: 4020575909770770321}
   - component: {fileID: 2138148470}
-  - component: {fileID: 960728868}
   m_Layer: 0
   m_Name: EnemyShooter
   m_TagString: Target
@@ -537,7 +560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionEvent: 0
   collisionType: 0
-  tags: Player
+  tags: Player;Bullet;Shield;Strike
   actions:
     m_PersistentCalls:
       m_Calls:
@@ -569,34 +592,3 @@ MonoBehaviour:
   selfDestructionTime: 0
   timeToDestroy: 0
   explosionPrefab: {fileID: 0}
---- !u!114 &960728868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7950937471199274491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06727d3ca451e9f42b2cbe20e8e1ba06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionEvent: 0
-  collisionType: 0
-  tags: Bullet
-  actions:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2138148470}
-        m_MethodName: DestroyThis
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: GameBooster.GameObjectUnityEvent, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null

@@ -6,7 +6,7 @@ public class CounterToDeath : MonoBehaviour
 {
 
     public float timeToDie;
-    public string tag;
+    public string myTag;
     private float timer;
     private bool canCount;
    
@@ -24,7 +24,7 @@ public class CounterToDeath : MonoBehaviour
         {
             if (timer <= 0.0f)
             {
-                GameObject elemento = GameObject.FindGameObjectWithTag(tag);
+                GameObject elemento = GameObject.FindGameObjectWithTag(myTag);
                 Destroy(elemento);
                 stopCount();
             }

@@ -12,6 +12,20 @@ TagManager:
   - Gallatica
   - Meteor
   - EnemyBullet
+  - HPBar
+  - ShieldBar
+  - ScoreText
+  - StrikeBar
+  - MyGC
+  - PUStrike
+  - PUShield
+  - PUStarB
+  - PUStarS
+  - PUStarG
+  - StrikeEnergy
+  - ShieldEnergy
+  - Shield
+  - Strike
   layers:
   - Default
   - TransparentFX

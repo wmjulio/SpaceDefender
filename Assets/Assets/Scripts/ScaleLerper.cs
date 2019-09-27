@@ -37,7 +37,6 @@ public class ScaleLerper : MonoBehaviour
 
     public void IncreaseScale(float percentualIncrease)
     {
-        print(percentualIncrease);
         percentualIncrease = percentualIncrease / 100;
         stepScale = transform.localScale + (transform.localScale * percentualIncrease);
         if (isAGreaterThanB(maxScale, stepScale))
